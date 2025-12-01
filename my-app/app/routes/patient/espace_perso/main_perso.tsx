@@ -1,4 +1,4 @@
-import Tab from "~/components/espace_perso_component/Tab";
+import Tab from "~/components/espace_perso_component/section-layout";
 
 export default function Home() {
   return (

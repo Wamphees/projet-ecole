@@ -26,7 +26,7 @@ export default function Navbar() {
             <Link to="/" className="text-xl font-bold text-indigo-600">MedisMat</Link>
             <nav className="hidden md:flex items-center gap-2">
               <Link to="/" className="text-sm text-gray-700 hover:text-indigo-600 px-2 py-1 rounded">Accueil</Link>
-              <Link to="/about" className="text-sm text-gray-700 hover:text-indigo-600 px-2 py-1 rounded">À propos</Link>
+              <Link to="/search" className="text-sm text-gray-700 hover:text-indigo-600 px-2 py-1 rounded">Rendez-vous!</Link>
             </nav>
           </div>
 

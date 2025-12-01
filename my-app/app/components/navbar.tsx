@@ -42,7 +42,7 @@ export default function Navbar() {
               </>
             ) : (
               <div className="flex items-center gap-3">
-                <NavUser/>
+                <NavUser user={user}/>
               </div>
             )}
           </div>

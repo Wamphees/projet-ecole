@@ -70,7 +70,7 @@ class Appointment extends Model
      */
     public function isPast(): bool
     {
-        $appointmentDateTime = Carbon::parse($this->appointment_date->format('Y-m-d') . ' ' . $this->appointment_time);
+        $appointmentDateTime = Carbon::parse(Carbon::parse($this->appointment_date)->format('Y-m-d') . ' ' . $this->appointment_time);
         return $appointmentDateTime->isPast();
     }
 
@@ -79,7 +79,7 @@ class Appointment extends Model
      */
     public function isToday(): bool
     {
-        return $this->appointment_date->isToday();
+        return Carbon::parse($this->appointment_date)->isToday();
     }
 
     /**
@@ -103,7 +103,7 @@ class Appointment extends Model
      */
     public function getFormattedDateTime(): string
     {
-        return $this->appointment_date->format('d/m/Y') . ' à ' .
+        return Carbon::parse($this->appointment_date)->format('d/m/Y') . ' à ' .
                Carbon::parse($this->appointment_time)->format('H:i');
     }
 

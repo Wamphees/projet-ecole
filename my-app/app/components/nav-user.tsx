@@ -1,5 +1,6 @@
-"use client"
+"use client";
 import { Link, useNavigate } from "react-router";
+import { useAuth } from "~/contexts/AuthContext";
 
 import {
   BadgeCheck,
@@ -8,13 +9,9 @@ import {
   CreditCard,
   LogOut,
   Sparkles,
-} from "lucide-react"
+} from "lucide-react";
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "./ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 import {
   DropdownMenu,
@@ -24,7 +21,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu"
+} from "./ui/dropdown-menu";
 
 interface NavUserProps {
   user: {
@@ -35,15 +32,18 @@ interface NavUserProps {
 }
 
 export function NavUser({ user }: NavUserProps) {
-  const name = user?.name ?? "Utilisateur"
-  const email = user?.email ?? "email inconnu"
-  const avatar = user?.avatar ?? undefined
+  const name = user?.name ?? "Utilisateur";
+  const email = user?.email ?? "email inconnu";
+  const avatar = user?.avatar ?? undefined;
 
   const initials = name
     .split(" ")
     .map((n) => n[0]?.toUpperCase())
     .join("")
-    .slice(0, 2)
+    .slice(0, 2);
+
+  const { logout } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <div className="p-2">
@@ -74,7 +74,9 @@ export function NavUser({ user }: NavUserProps) {
             <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
               <Avatar className="h-8 w-8 rounded-lg">
                 <AvatarImage src={avatar} alt={name} />
-                <AvatarFallback className="rounded-lg">{initials}</AvatarFallback>
+                <AvatarFallback className="rounded-lg">
+                  {initials}
+                </AvatarFallback>
               </Avatar>
 
               <div className="grid flex-1 text-left text-sm leading-tight">
@@ -98,7 +100,12 @@ export function NavUser({ user }: NavUserProps) {
           <DropdownMenuGroup>
             <DropdownMenuItem>
               <BadgeCheck />
-              <Link to="/my_space" className="text-sm text-gray-700 hover:text-indigo-600 px-2 py-1 rounded">Account</Link>
+              <Link
+                to="/my_space"
+                className="text-sm text-gray-700 hover:text-indigo-600 px-2 py-1 rounded"
+              >
+                Account
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
               <CreditCard />
@@ -112,12 +119,22 @@ export function NavUser({ user }: NavUserProps) {
 
           <DropdownMenuSeparator />
 
-          <DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={async () => {
+              try {
+                await logout(); // vide AuthService + AuthContext
+                navigate("/"); // redirige home
+              } catch (err) {
+                console.error("Erreur logout :", err);
+              }
+            }}
+            className="cursor-pointer"
+          >
             <LogOut />
             Log out
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
-  )
+  );
 }

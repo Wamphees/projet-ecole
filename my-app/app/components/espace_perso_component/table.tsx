@@ -36,6 +36,9 @@ import {
 } from "../ui/table"
 
 import { useDoctors } from "~/contexts/DoctorsContext"
+import { Modal } from "../search_page/Modal"
+import { ItemImage } from "../search_page/ItemImage"
+import { ItemForm } from "../search_page/ItemForm"
 
 /* ============================
        TYPES
@@ -51,17 +54,28 @@ export type Medecin ={
     diplome : string
 }
 
-/* ============================
-       DONNÉES (FAKE)
-=============================== */
-
-
 
 /* ============================
        COLONNES
 =============================== */
 
-export const columns: ColumnDef<Medecin>[] = [
+
+
+/* ============================
+       COMPONENT TABLE
+=============================== */
+
+export function DataTableDemo() {
+    const {medecins, loading} = useDoctors();
+  const [sorting, setSorting] = React.useState<SortingState>([])
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+    []
+  )
+  const [columnVisibility, setColumnVisibility] =
+    React.useState<VisibilityState>({})
+  const [rowSelection, setRowSelection] = React.useState({})
+
+  const columns: ColumnDef<Medecin>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -123,7 +137,7 @@ export const columns: ColumnDef<Medecin>[] = [
       return (
         <Button
           variant="default"
-          onClick={() => console.log("Réserver pour :", medecin.nom)}
+          onClick={() => handleReserve(medecin)}
         >
           Réserver
         </Button>
@@ -132,23 +146,9 @@ export const columns: ColumnDef<Medecin>[] = [
   },
 ]
 
-/* ============================
-       COMPONENT TABLE
-=============================== */
-
-export function DataTableDemo() {
-    const {medecins, loading} = useDoctors();
-  const [sorting, setSorting] = React.useState<SortingState>([])
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
-  )
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
-  const [rowSelection, setRowSelection] = React.useState({})
-
   const table = useReactTable({
     data: medecins,
-    columns,
+    columns: columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
@@ -164,6 +164,17 @@ export function DataTableDemo() {
       rowSelection,
     },
   })
+
+  const [modalOpen, setModalOpen] = React.useState(false)
+  const [selectedDoctor, setSelectedDoctor] = React.useState<Medecin | null>(null)
+
+  const handleReserve = (doctor: Medecin) => {
+    setSelectedDoctor(doctor)
+    setModalOpen(true)
+  }
+
+
+
 
   return (
     <div className="w-full">
@@ -269,6 +280,18 @@ export function DataTableDemo() {
           </TableBody>
         </Table>
       </div>
+
+            <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} title="Réservation">
+        {selectedDoctor ? (
+          <div>
+            <div className="bg-white rounded-lg p-6 w-full relative" >
+                <ItemImage doctor={selectedDoctor} />
+                {/* <ItemForm /> */}
+                <ItemForm doctorId={Number(selectedDoctor.id)} />
+            </div>
+        </div>
+        ) : null}
+      </Modal>
 
       {/* FOOTER */}
       <div className="flex items-center justify-end space-x-2 py-4">

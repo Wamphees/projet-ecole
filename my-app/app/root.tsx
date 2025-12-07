@@ -12,6 +12,7 @@ import "./app.css";
 import { AuthProvider } from "./contexts/AuthContext";
 import Navbar from "./components/navbar";
 import { DoctorsProvider } from "./contexts/DoctorsContext";
+import { Toaster } from "./components/ui/sonner";
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -49,6 +50,7 @@ export default function App() {
       <DoctorsProvider>
         <Navbar />
         <Outlet />
+        <Toaster/>
       </DoctorsProvider>
     </AuthProvider>
   );

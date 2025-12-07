@@ -30,7 +30,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       const data = await authService.login(email, password);
       setUser(data.user);
-    } finally {
+    }catch (error) {
+      console.log("erreur de connexion");
+    }
+    finally {
       setIsLoading(false);
     }
   };

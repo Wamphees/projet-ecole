@@ -1,6 +1,8 @@
 // components/HeroSection.jsx
 import React from 'react';
 import { Star, Shield, Clock, Users } from 'lucide-react';
+import { Link, useNavigate } from "react-router";
+
 
 function HeroSection(){
   return (
@@ -38,9 +40,7 @@ function HeroSection(){
 
             {/* CTA */}
             <div className="flex space-x-4">
-              <button className="bg-yellow-400 text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition">
-                Prendre un RDV
-              </button>
+              <Link to="/search" className="bg-yellow-400 text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition">Rendez-vous!</Link>
               <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition">
                 Être rappelé
               </button>

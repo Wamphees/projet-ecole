@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router";
 import { Button } from "./ui/button";
 import { useAuth } from "../contexts/AuthContext";
 import {NavUser} from "./nav-user";
+import { Search, Bell, User, Calendar } from 'lucide-react'; 
+import ActionSearchBar from "./kokonutui/action-search-bar";      
+
 
 export default function Navbar() {
   const { isAuthenticated, user, role, logout } = useAuth();
@@ -19,16 +22,19 @@ export default function Navbar() {
   };
 
   return (
-    <header className="bg-white/60 backdrop-blur-sm sticky top-0 z-40 border-b">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="bg-white/60 backdrop-blur-sm sticky top-0 z-40 border-b ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4">
+            <Calendar className="h-8 w-8 text-blue-600" />
             <Link to="/" className="text-xl font-bold text-indigo-600">MedisMat</Link>
-            <nav className="hidden md:flex items-center gap-2">
+            {/* <nav className="hidden md:flex items-center gap-2">
               <Link to="/" className="text-sm text-gray-700 hover:text-indigo-600 px-2 py-1 rounded">Accueil</Link>
               <Link to="/search" className="text-sm text-gray-700 hover:text-indigo-600 px-2 py-1 rounded">Rendez-vous!</Link>
-            </nav>
+            </nav> */}
           </div>
+
+          <ActionSearchBar/>
 
           <div className="hidden md:flex items-center gap-3">
             {!isAuthenticated ? (
@@ -41,7 +47,10 @@ export default function Navbar() {
                 </Link>
               </>
             ) : (
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3"><button className="relative p-2 text-gray-600 hover:text-blue-600">
+                            <Bell className="h-6 w-6" />
+                            <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                          </button>
                 <NavUser user={user}/>
               </div>
             )}

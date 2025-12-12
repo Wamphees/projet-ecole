@@ -1,6 +1,6 @@
 "use client";
 import { Link, useNavigate } from "react-router";
-import { useAuth } from "~/contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 
 import {
   BadgeCheck,
@@ -104,7 +104,7 @@ export function NavUser({ user }: NavUserProps) {
                 to="/my_space"
                 className="text-sm text-gray-700 hover:text-indigo-600 px-2 py-1 rounded"
               >
-                Account
+                Mes informations
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>

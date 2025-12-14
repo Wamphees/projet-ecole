@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\DoctorController;
 use App\Http\Controllers\Api\AvailabilityController;
 use App\Http\Controllers\Api\ConsultationTypeController;
+use App\Http\Controllers\Api\ChatbotController;
+use App\Http\Controllers\Api\DiagnosisController;
+use App\Http\Controllers\Api\DoctorRecommendationController;
 
 // Routes d'authentification
 Route::prefix('auth')->group(function () {
@@ -69,9 +72,22 @@ Route::get('/doctors/{doctorId}/availabilities', [AvailabilityController::class,
 // Liste des types de consultation
 Route::get('/consultation-types', [ConsultationTypeController::class, 'index']);
 
-/**
- * ============================================
- * ROUTES PROTÉGÉES (AUTHENTIFICATION REQUISE)
- * ============================================
- * Ces routes nécessitent que l'utilisateur soit connecté
- */
+
+// Routes IA
+
+// Chatbot
+Route::get('/chatbot/faq', [ChatbotController::class, 'getFaq']); // Public
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/chatbot/message', [ChatbotController::class, 'sendMessage']);
+});
+
+// Pré-diagnostic
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/diagnosis/analyze', [DiagnosisController::class, 'analyze']);
+    Route::post('/diagnosis/urgency', [DiagnosisController::class, 'evaluateUrgency']);
+});
+
+// Recommandation de médecin
+Route::post('/doctors/recommend', [DoctorRecommendationController::class, 'recommend']); // Public
+Route::get('/doctors/specialties', [DoctorRecommendationController::class, 'getSpecialties']); // Public
+Route::post('/doctors/smart-search', [DoctorRecommendationController::class, 'smartSearch']); // Public

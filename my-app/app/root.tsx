@@ -13,6 +13,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import Navbar from "./components/navbar";
 import { DoctorsProvider } from "./contexts/DoctorsContext";
 import { Toaster } from "./components/ui/sonner";
+import { ChatbotProvider } from "./contexts/ChatbotContext";
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -48,9 +49,11 @@ export default function App() {
   return (
     <AuthProvider>
       <DoctorsProvider>
+        <ChatbotProvider> 
         <Navbar />
         <Outlet />
         <Toaster/>
+        </ChatbotProvider>
       </DoctorsProvider>
     </AuthProvider>
   );

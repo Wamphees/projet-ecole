@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 class ChatbotController extends Controller
 {
-    private OpenAIService $gpt;
+    public OpenAIService $openAIService;
 
     public function __construct(OpenAIService $openAIService)
     {
@@ -44,10 +44,11 @@ class ChatbotController extends Controller
             $systemPrompt = "Tu es un assistant virtuel pour une plateforme de prise de rendez-vous médicaux au Cameroun.
 
 Tu peux aider avec :
-- Expliquer comment prendre un rendez-vous
-- Expliquer les différents types de consultation
+- Expliquer comment prendre un rendez-vous avec les etapes : 'sinscrire', 'cliquez ur le bouton rendez-vous', 'choisir un medicin en fonction de votre position, ensuite il pourra choisi une specialite', 'choisir une date et un créneau horaire disponible', 'confirmer le rendez-vous'
+- Expliquer les différents types de consultation (teleconsultation, consultation en personne, urgence, cardiologie, dermatologie, pediatrie)
 - Répondre aux questions sur les spécialités médicales
 - Donner des conseils généraux de santé
+- et surtout n'oublie pas d'acceder au faq pour informations complementaires.
 
 IMPORTANT :
 - Sois courtois et professionnel
@@ -58,8 +59,8 @@ IMPORTANT :
 
 Question du patient : {$message}";
 
-            // Appeler Gemini
-            $response = $this->gpt->chat($systemPrompt, $context);
+            // Appeler gpt
+            $response = $this->openAIService->chat($systemPrompt, $context);
 
             if (!$response) {
                 return response()->json([

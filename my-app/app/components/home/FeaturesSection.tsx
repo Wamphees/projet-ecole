@@ -1,4 +1,4 @@
-// src/components/FeaturesSection.js
+
 import React from 'react';
 import { Video, FileText, MessageCircle, Smartphone, Shield, Zap } from 'lucide-react';
 
@@ -50,5 +50,5 @@ function FeaturesSection(){
   );
 };
 
-// AJOUTEZ CETTE LIGNE
+
 export default FeaturesSection;

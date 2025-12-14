@@ -11,6 +11,7 @@ import {SpecialtiesSection} from '../components/home/SpecialtiesSection';
 import FeaturesSection from '../components/home/FeaturesSection';
 import DoctorsSection from '../components/home/DoctorsSection'; 
 import Footer from '../components/home/Footer';
+import FloatingAiButton from "~/components/home/FloatingAiButton";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -102,6 +103,7 @@ export default function Home(){
         <DoctorsSection /> 
       </main>
       <Footer />
+      <FloatingAiButton />
     </div>
   )
 }

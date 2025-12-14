@@ -24,24 +24,16 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "~/components/ui/sidebar"
+import { useDashboard } from "../contexts/DashboardContext"
+
 
 // This is sample data.
 const data = {
   teams: [
     {
-      name: "Acme Inc",
+      name: "Dashboard",
       logo: Command,
       plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
     },
   ],
   navMain: [
@@ -259,11 +251,12 @@ const data = {
 export function SidebarLeft({
   ...props
 }: React.ComponentProps<typeof Sidebar>) {
+  const { setCurrentPage } = useDashboard()
   return (
     <Sidebar className="border-r-0 pt-15" {...props}>
       <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
-        <NavMain items={data.navMain} />
+        <NavMain items={data.navMain} onSelect={(item) => setCurrentPage(item.title)}/>
       </SidebarHeader>
       <SidebarContent>
         {/* <NavFavorites favorites={data.favorites} /> */}

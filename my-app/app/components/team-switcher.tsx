@@ -46,7 +46,7 @@ export function TeamSwitcher({
               <ChevronDown className="opacity-50" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
-          <DropdownMenuContent
+          {/* <DropdownMenuContent
             className="w-64 rounded-lg"
             align="start"
             side="bottom"
@@ -75,7 +75,7 @@ export function TeamSwitcher({
               </div>
               <div className="text-muted-foreground font-medium">Add team</div>
             </DropdownMenuItem>
-          </DropdownMenuContent>
+          </DropdownMenuContent> */}
         </DropdownMenu>
       </SidebarMenuItem>
     </SidebarMenu>

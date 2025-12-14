@@ -45,18 +45,17 @@ export function SidebarRight({
   return (
     <Sidebar
       collapsible="none"
-      className="sticky top-0 hidden h-svh border-l lg:flex"
+      className="fixed right-0 top-0 hidden h-svh border-l lg:flex pt-15"
       {...props}
     >
       {/* <SidebarHeader className="border-sidebar-border h-16 border-b">
         <NavUser user={data.user} />
       </SidebarHeader> */}
       <SidebarContent>
-        <DatePicker />
         <SidebarSeparator className="mx-0" />
-        <Calendars calendars={data.calendars} />
+        <h1>jhgwefw</h1>
       </SidebarContent>
-      <SidebarFooter>
+      {/* <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton>
@@ -65,7 +64,7 @@ export function SidebarRight({
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-      </SidebarFooter>
+      </SidebarFooter> */}
     </Sidebar>
   )
 }

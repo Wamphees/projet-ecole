@@ -13,7 +13,7 @@ function HeroSection(){
           <div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Votre santé, 
-              <span className="block text-yellow-300">notre priorité</span>
+              <span className="block text-purple-700">notre priorité</span>
             </h1>
             <p className="text-xl mb-8 text-blue-100">
               Prenez rendez-vous en ligne avec les meilleurs professionnels de santé. 

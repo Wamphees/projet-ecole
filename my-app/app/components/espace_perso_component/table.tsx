@@ -217,7 +217,7 @@ export function DataTableDemo() {
 
         <button
           onClick={() => setIsRecommendationOpen(true)}
-          className="flex items-center h-9 min-w-0 gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-lg"
+          className="flex items-center h-9 min-w-0 gap-2 px-6 py-3 bg-linear-to-r from-blue-600 to-purple-700 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-lg"
         >
           <Sparkles className="w-5 h-5" />
           Recommandation IA
@@ -253,7 +253,7 @@ export function DataTableDemo() {
 
       {/* TABLE */}
       <div className="overflow-hidden rounded-md border">
-        <Table>
+        <Table className="border-blue-600">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
@@ -321,9 +321,9 @@ export function DataTableDemo() {
 
       {/* FOOTER */}
       <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="text-muted-foreground flex-1 text-sm">
+        {/* <div className="text-muted-foreground flex-1 text-sm">
           {table.getFilteredSelectedRowModel().rows.length} sélectionné(s)
-        </div>
+        </div> */}
 
         <div className="space-x-2">
           <Button

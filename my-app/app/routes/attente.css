@@ -1,0 +1,147 @@
+
+
+body{
+    background-color: #f4f6f9;
+}
+
+/* Header */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon{
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.logo-text{
+    font-weight: bold;
+    color: #007bff;
+}
+
+.page-title{
+    color: #555;
+}
+
+/* Container */
+.container{
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Card */
+.card{
+    background: white;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Video Icon */
+.video-icon{
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* Titles */
+.title{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-title{
+    margin-bottom: 16px;
+}
+
+/* Info Grid */
+.info-grid{
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.info-box{
+    flex: 1;
+    background: #eef5ff;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+}
+
+.info-box h3{
+    font-size: 28px;
+    color: #007bff;
+}
+
+.info-box p{
+    font-size: 14px;
+    color: #555;
+}
+
+/* Button */
+.join-btn{
+    display: block;
+    margin: 0 auto;
+    padding: 12px 30px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.join-btn:hover{
+    background: #218838;
+}
+
+/* Test items */
+.test-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.status{
+    font-weight: bold;
+}
+
+.status.good{
+    color: orange;
+}
+
+.status.excellent{
+    color: green;
+}
+
+/* Responsive */
+@media (max-width: 600px){
+    .info-grid{
+        flex-direction: column;
+    }
+
+    .header{
+        flex-direction: column;
+        gap: 8px;
+    }
+}

@@ -147,7 +147,7 @@ const PatientListDashboard: React.FC<PatientListDashboardProps> = ({
       {isModalOpen && selectedPatient && (
         <>
           <div 
-            className="fixed inset-0 bg-gray-600 bg-opacity-50 backdrop-blur-sm z-40 transition-opacity duration-200"
+            className="fixed inset-0 bg-transparent bg-opacity-50 backdrop-blur-sm z-40 transition-opacity duration-200"
             onClick={handleCloseModal}
           />
           

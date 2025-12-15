@@ -46,10 +46,10 @@ export function NavUser({ user }: NavUserProps) {
   const navigate = useNavigate();
 
   return (
-    <div className="p-2">
+    <div className=" bg-linear-to-r from-blue-600 to-purple-700 rounded-lg cursor-pointer">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <button className="flex items-center gap-3 w-full p-2 rounded-lg hover:bg-muted">
+          <button className="flex items-center gap-3 w-full p-2 rounded-lg cursor-pointer">
             <Avatar className="h-8 w-8 rounded-lg">
               <AvatarImage src={avatar} alt={name} />
               <AvatarFallback className="rounded-lg">{initials}</AvatarFallback>
@@ -91,7 +91,12 @@ export function NavUser({ user }: NavUserProps) {
           <DropdownMenuGroup>
             <DropdownMenuItem>
               <Sparkles />
-              Upgrade to Pro
+              <Link
+                to="/doctor/dashboard"
+                className="text-sm text-gray-700 hover:text-indigo-600 px-2 py-1 rounded"
+              >
+                Dashboard
+              </Link>
             </DropdownMenuItem>
           </DropdownMenuGroup>
 

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Star, Shield, Clock, Users } from 'lucide-react';
 import { Link, useNavigate } from "react-router";
-
+import medecinBackground from 'public/medecinBackground.png';
 
 function HeroSection(){
   return (
@@ -37,7 +37,7 @@ function HeroSection(){
                 </div>
               </div>
             </div>
-
+ 
             {/* CTA */}
             <div className="flex space-x-4">
               <Link to="/search" className="bg-yellow-400 text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition">Rendez-vous!</Link>
@@ -47,42 +47,10 @@ function HeroSection(){
             </div>
           </div>
 
-          {/* Formulaire de recherche rapide */}
-          <div className="bg-white rounded-2xl p-8 shadow-2xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              Trouvez un professionnel
-            </h3>
-            <div className="space-y-4">
-              <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
-                <option>Spécialité médicale</option>
-                <option>Généraliste</option>
-                <option>Dentiste</option>
-                <option>Dermatologue</option>
-                <option>Ophtalmologue</option>
-              </select>
-              
-              <input 
-                type="text" 
-                placeholder="Ville ou code postal"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-              />
-              
-              <div className="grid grid-cols-2 gap-4">
-                <input 
-                  type="date" 
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                />
-                <select className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
-                  <option>Prochain créneau</option>
-                  <option>Aujourd'hui</option>
-                  <option>Cette semaine</option>
-                </select>
-              </div>
-              
-              <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                Rechercher
-              </button>
-            </div>
+          {/* image de la home page*/}
+          <div className="bg-transparent relative top-16 h-">
+            
+          <img src={medecinBackground} width={1500} height={1500} alt="" />
           </div>
         </div>
       </div>

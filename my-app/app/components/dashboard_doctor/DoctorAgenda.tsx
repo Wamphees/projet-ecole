@@ -172,15 +172,15 @@ const DoctorAgenda = () => {
     <div className="w-full h-screen bg-background from-slate-50 to-slate-100 p-3 -mt-4">
       <div className="flex flex-1 flex-col gap-4 p-4">
         <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-          <div className="bg-muted/30 aspect-video rounded-xl p-3 flex items-center justify-between" >
+          <div className="aspect-video rounded-xl p-3 flex items-center justify-between bg-white border border-gray-200 shadow-sm " >
             <div className="bg-sky-200 rounded"><img src={calendar} alt="Calendar " width={35} height={35} /></div>
             <div><span className="text-xl">12</span> <span><p className="text-sm">Rendez-vous aujourd'hui</p></span></div>
           </div>
-          <div className="bg-muted/30 aspect-video rounded-xl p-3 flex items-center gap-4" >
+          <div className="aspect-video rounded-xl p-3 flex items-center justify-between bg-white border border-gray-200 shadow-sm " >
             <div className="bg-red-200 rounded"><img src={close} alt="CLose " width={35} height={35} /></div>
             <div><span className="text-xl">2</span> <span><p className="text-sm">Annulations</p></span></div>
           </div>
-          <div className="bg-muted/30 aspect-video rounded-xl p-3 flex items-center gap-4" >
+          <div className="aspect-video rounded-xl p-3 flex items-center justify-between bg-white border border-gray-200 shadow-sm " >
             <div className="bg-pink-200 rounded"><img src={star} alt="star " width={35} height={35} /></div>
             <div><span className="text-xl">4.8</span> <span><p className="text-sm">Satisfaction moyenne</p></span></div>
           </div>

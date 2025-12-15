@@ -39,6 +39,10 @@ import { useDoctors } from "~/contexts/DoctorsContext"
 import { Modal } from "../search_page/Modal"
 import { ItemImage } from "../search_page/ItemImage"
 import { ItemForm } from "../search_page/ItemForm"
+import { Sparkles } from 'lucide-react';
+
+import DoctorRecommendation from "../search_page/DoctorRecommendation"
+import { useState } from "react"
 
 /* ============================
        TYPES
@@ -66,6 +70,7 @@ export type Medecin ={
 =============================== */
 
 export function DataTableDemo() {
+  const [isRecommendationOpen, setIsRecommendationOpen] = useState(false);
     const {medecins, loading} = useDoctors();
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -174,6 +179,14 @@ export function DataTableDemo() {
   }
 
 
+  const handleSelectDoctor = (doctorId: number) => {
+    console.log('Doctor selected:', doctorId);
+    // Rediriger vers la page du médecin ou ouvrir le formulaire de RDV
+    setIsRecommendationOpen(false);
+    // router.push(`/doctors/${doctorId}`);
+  };
+
+
 
 
   return (
@@ -201,6 +214,14 @@ export function DataTableDemo() {
           }
           className="max-w-sm"
         />
+
+        <button
+          onClick={() => setIsRecommendationOpen(true)}
+          className="flex items-center h-9 min-w-0 gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-lg"
+        >
+          <Sparkles className="w-5 h-5" />
+          Recommandation IA
+        </button>
 
         {/* GESTION DES COLONNES */}
         <DropdownMenu>
@@ -280,6 +301,11 @@ export function DataTableDemo() {
           </TableBody>
         </Table>
       </div>
+      <DoctorRecommendation
+        isOpen={isRecommendationOpen}
+        onClose={() => setIsRecommendationOpen(false)}
+        onSelectDoctor={handleSelectDoctor}
+      />
 
             <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} title="Réservation">
         {selectedDoctor ? (

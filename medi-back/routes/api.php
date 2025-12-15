@@ -72,8 +72,13 @@ Route::get('/doctors/{doctorId}/availabilities', [AvailabilityController::class,
 // Liste des types de consultation
 Route::get('/consultation-types', [ConsultationTypeController::class, 'index']);
 
+/**
+ * ============================================
+ * ROUTES PROTÉGÉES (AUTHENTIFICATION REQUISE)
+ * ============================================
+ * Ces routes nécessitent que l'utilisateur soit connecté
+ */
 
-// Routes IA
 
 // Chatbot
 Route::get('/chatbot/faq', [ChatbotController::class, 'getFaq']); // Public

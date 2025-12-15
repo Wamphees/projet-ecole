@@ -15,6 +15,7 @@ import {
   SidebarRail,
   SidebarSeparator,
 } from "~/components/ui/sidebar"
+import PatientList from "./dashboard_doctor/PatientList"
 
 // This is sample data.
 const data = {
@@ -45,7 +46,7 @@ export function SidebarRight({
   return (
     <Sidebar
       collapsible="none"
-      className="fixed right-0 top-0 hidden h-svh border-l lg:flex pt-15"
+      className="fixed right-0 top-0 border-none hidden h-svh border-l lg:flex pt-15"
       {...props}
     >
       {/* <SidebarHeader className="border-sidebar-border h-16 border-b">
@@ -53,7 +54,7 @@ export function SidebarRight({
       </SidebarHeader> */}
       <SidebarContent>
         <SidebarSeparator className="mx-0" />
-        <h1>jhgwefw</h1>
+        <PatientList />
       </SidebarContent>
       {/* <SidebarFooter>
         <SidebarMenu>

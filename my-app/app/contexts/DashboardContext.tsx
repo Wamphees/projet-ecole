@@ -11,7 +11,7 @@ const DashboardContext = createContext<DashboardContextType>({
 });
 
 export function DashboardProvider({ children }: { children: React.ReactNode }) {
-  const [currentPage, setCurrentPage] = useState("home");
+  const [currentPage, setCurrentPage] = useState("Home");
 
   return (
     <DashboardContext.Provider value={{ currentPage, setCurrentPage }}>

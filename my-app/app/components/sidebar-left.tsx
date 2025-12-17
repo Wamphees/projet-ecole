@@ -11,6 +11,7 @@ import {
   Settings2,
   Sparkles,
   Trash2,
+  TimerIcon
 } from "lucide-react"
 
 import { NavFavorites } from "~/components/nav-favorites"
@@ -37,11 +38,7 @@ const data = {
     },
   ],
   navMain: [
-    {
-      title: "Search",
-      url: "#",
-      icon: Search,
-    },
+    
     {
       title: "Ask AI",
       url: "#",
@@ -54,18 +51,13 @@ const data = {
       isActive: true,
     },
     {
-      title: "Inbox",
+      title: "Mes crenaux",
       url: "#",
-      icon: Inbox,
+      icon: TimerIcon,
       badge: "10",
     },
   ],
   navSecondary: [
-    {
-      title: "Calendar",
-      url: "#",
-      icon: Calendar,
-    },
     {
       title: "Settings",
       url: "#",

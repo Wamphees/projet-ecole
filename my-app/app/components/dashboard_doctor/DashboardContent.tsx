@@ -36,7 +36,7 @@ export function DashboardContent() {
       <div className="p-4">
         {currentPage === "Home" && <DoctorAgenda />}
         {currentPage === "agenda" && <DoctorAgenda />}
-        {currentPage === "settings" && <DoctorAvailabilitySettings />}
+        {currentPage === "Mes crenaux" && <DoctorAvailabilitySettings />}
         {currentPage === "Inbox" && <h1>Inbox</h1>}
         {currentPage === "ask" && <h1>Ask AI</h1>}
         {currentPage === "search" && <h1>Search</h1>}

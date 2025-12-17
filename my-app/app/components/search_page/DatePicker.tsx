@@ -36,16 +36,16 @@ export function DatePicker({ value, onChange, availableSlots = [], loading = fal
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline" className="w-60">
+        <Button variant="outline" className="w-60 bg-linear-to-r from-blue-600 to-purple-700 text-white">
           {format(date, "dd MMM yyyy")} — {time ? time : "Choisir l'heure"}
         </Button>
       </PopoverTrigger>
 
       <PopoverContent className="w-80 relative left-73 top-26">
         <div className="rounded-md border">
-          <div className="flex max-sm:flex-col">
+          <div className="flex max-sm:flex-col border-blue-600">
             <Calendar
-              className="p-2 sm:pe-5"
+              className="p-2 sm:pe-5 border-blue-600"
               disabled={[{ before: today }]}
               mode="single"
               onSelect={(newDate) => {
@@ -74,7 +74,7 @@ export function DatePicker({ value, onChange, availableSlots = [], loading = fal
                         availableSlots.map((slot) => (
                           <Button
                             key={slot.value}
-                            className="w-full"
+                            className="w-full bg-linear-to-r from-blue-600 to-purple-700 text-white"
                             onClick={() => setTime(slot.value)}
                             size="sm"
                             variant={time === slot.value ? "default" : "outline"}

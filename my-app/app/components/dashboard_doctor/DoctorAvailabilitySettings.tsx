@@ -122,7 +122,7 @@ const DoctorAvailabilitySettings = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-8">
+    <div className="w-full min-h-screen p-8">
       {/* Header */}
       <div className="max-w-7xl mx-auto mb-8">
         <div className="bg-white rounded-3xl shadow-2xl p-8 border border-purple-100">

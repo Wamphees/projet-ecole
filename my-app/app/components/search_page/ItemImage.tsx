@@ -26,9 +26,9 @@ interface ItemImageProps {
 
 export function ItemImage({ doctor }: ItemImageProps) {
   return (
-    <div className="flex w-full flex-col gap-6">
-      <ItemGroup className="gap-4">
-        <Item variant="outline" asChild role="listitem">
+    <div className="flex w-full flex-col gap-6 border-blue-600">
+      <ItemGroup className="gap-4 border-blue-600">
+        <Item variant="outline" asChild role="listitem" className="border-blue-600">
           <a href="#">
             <ItemMedia variant="image">
               <img
@@ -40,7 +40,7 @@ export function ItemImage({ doctor }: ItemImageProps) {
               />
             </ItemMedia>
             <ItemContent>
-              <ItemTitle className="line-clamp-1">{doctor.nom}</ItemTitle>
+              <ItemTitle className="line-clamp-1 text-blue-600">{doctor.nom}</ItemTitle>
               <ItemDescription>{doctor.specialite}</ItemDescription>
               <ItemDescription>{doctor.etablissement}</ItemDescription>
               <ItemDescription>{doctor.diplome}</ItemDescription>

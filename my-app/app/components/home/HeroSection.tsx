@@ -41,9 +41,7 @@ function HeroSection(){
             {/* CTA */}
             <div className="flex space-x-4">
               <Link to="/search" className="bg-yellow-400 text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition">Rendez-vous!</Link>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition">
-                Être rappelé
-              </button>
+               <Link to="/contact" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition">Nous contacter!</Link>
             </div>
           </div>
 

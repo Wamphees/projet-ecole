@@ -143,7 +143,7 @@ export function ItemForm({ doctorId }: ItemFormProps) {
   return (
     <form className="flex w-full flex-col gap-6" onSubmit={handleSubmit}>
       <ItemGroup className="gap-4">
-        <ItemTitle className="mt-3 text-xl font-bold">
+        <ItemTitle className="mt-3 text-xl font-bold text-blue-600">
           Type de consultation
         </ItemTitle>
         <FieldGroup>
@@ -153,7 +153,7 @@ export function ItemForm({ doctorId }: ItemFormProps) {
               defaultValue="Consultation générale"
               onValueChange={(val)=>setTypeConsultation(val)}
             >
-              <FieldLabel htmlFor="a">
+              <FieldLabel htmlFor="a" className="border-blue-600">
                 <Field orientation="horizontal">
                   <FieldContent>
                     <FieldTitle>Consultation générale</FieldTitle>
@@ -164,7 +164,7 @@ export function ItemForm({ doctorId }: ItemFormProps) {
                   <RadioGroupItem value="Consultation générale" id="a" />
                 </Field>
               </FieldLabel>
-              <FieldLabel htmlFor="vm2">
+              <FieldLabel htmlFor="vm2" className="border-blue-600">
                 <Field orientation="horizontal">
                   <FieldContent>
                     <FieldTitle>Téléconsultation</FieldTitle>
@@ -175,7 +175,7 @@ export function ItemForm({ doctorId }: ItemFormProps) {
                   <RadioGroupItem value="Téléconsultation" id="vm2" />
                 </Field>
               </FieldLabel>
-              <FieldLabel htmlFor="vm4">
+              <FieldLabel htmlFor="vm4" className="border-blue-600">
                 <Field orientation="horizontal">
                   <FieldContent>
                     <FieldTitle>Consultation d'urgence</FieldTitle>
@@ -186,7 +186,7 @@ export function ItemForm({ doctorId }: ItemFormProps) {
                   <RadioGroupItem value="Consultation d'urgence" id="vm4" />
                 </Field>
               </FieldLabel>
-              <FieldLabel htmlFor="vm5">
+              <FieldLabel htmlFor="vm5" className="border-blue-600">
                 <Field orientation="horizontal">
                   <FieldContent>
                     <FieldTitle>Bilan de santé</FieldTitle>
@@ -201,7 +201,7 @@ export function ItemForm({ doctorId }: ItemFormProps) {
           </FieldSet>
         </FieldGroup>
         <div className="flex flex-row h-20  items-center gap-2 text-center">
-          <ItemTitle className="text-xl  flex items-center mb-5 font-bold relative top-2">
+          <ItemTitle className="text-xl  flex items-center mb-5 font-bold relative top-2 text-blue-600">
             Horaire
           </ItemTitle>
           <DatePicker 
@@ -209,6 +209,7 @@ export function ItemForm({ doctorId }: ItemFormProps) {
             onChange={setRdv}
             availableSlots={availableSlots}
             loading={loadingSlots}
+            
           />
         </div>
         <div className="flex justify-end absolute left-195 top-113">

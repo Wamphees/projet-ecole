@@ -41,13 +41,13 @@ class DoctorRecommendationController extends Controller
             $symptoms = $request->input('symptoms');
             $preference = $request->input('preference', 'specialite');
 
-            // Étape 1 : Demander à OpenAI quelle spécialité recommander
+            // Demander à L'IA quelle spécialité recommander
             $aiRecommendation = $this->openAIService->recommendSpecialty($symptoms);
 
             if (!$aiRecommendation) {
                 return response()->json([
                     'success' => false,
-                    'message' => 'Erreur lors de la recommandation IA'
+                    'message' => 'Erreur lors de la recommandation, veillez verifier votre connexion internet'
                 ], 500);
             }
 
@@ -55,7 +55,7 @@ class DoctorRecommendationController extends Controller
             $urgency = $aiRecommendation['urgency'] ?? 'normal';
             $reason = $aiRecommendation['reason'] ?? 'Consultation recommandée';
 
-            // Étape 2 : Trouver les médecins correspondants
+            // Trouver les médecins correspondants
             $doctors = $this->findDoctorsBySpecialty($recommendedSpecialty, $preference);
 
             return response()->json([

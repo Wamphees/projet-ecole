@@ -204,7 +204,7 @@ class OpenAIService
      */
     public function recommendSpecialty(string $symptoms): ?array
     {
-        $prompt = "Tu es un assistant médical. Analyse ces symptômes et recommande une spécialité médicale appropriée.
+        $prompt = "Tu es un assistant médical. Analyse ces symptômes et recommande une spécialité médicale appropriée parmi ceux-ci : Cardiologie/Pédiatrie/Médecine Générale/Cardiologie.
 
 Symptômes : {$symptoms}
 

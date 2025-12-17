@@ -70,6 +70,7 @@ class AppointmentController extends Controller
                         'name' => $appointment->doctor->name,
                     ],
                     'appointment_date' => Carbon::parse($appointment->appointment_date)->format('d/m/Y'),
+                    // 'appointment_date' => Carbon::parse($appointment->appointment_date)->format('Y-m-d'),
                     'appointment_time' => Carbon::parse($appointment->appointment_time)->format('H:i'),
                     'consultation_type' => $appointment->consultationType->name,
                     'status' => $appointment->status,
@@ -243,4 +244,52 @@ class AppointmentController extends Controller
             ], 500);
         }
     }
+
+    /**
+ * Modifier le statut d'un rendez-vous
+ * Route : PUT /api/appointments/{id}/status
+ * Accessible au patient ou au médecin concerné
+ */
+public function updateStatus(Request $request, $id)
+{
+    try {
+        $appointment = Appointment::findOrFail($id);
+
+        // Vérifier les permissions : seul le patient ou le médecin concerné peut modifier
+        if ($appointment->patient_id !== $request->user()->id &&
+            $appointment->doctor_id !== $request->user()->id &&
+            !$request->user()->isAdmin()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Non autorisé'
+            ], 403);
+        }
+
+        // Validation du statut
+        $validated = $request->validate([
+            'status' => 'required|in:pending,confirmed,cancelled,completed'
+        ]);
+
+        $appointment->update([
+            'status' => $validated['status']
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Statut mis à jour avec succès',
+            'data' => [
+                'id' => $appointment->id,
+                'status' => $appointment->status,
+            ]
+        ], 200);
+
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Erreur lors de la mise à jour du statut',
+            'error' => $e->getMessage()
+        ], 500);
+    }
+}
+
 }

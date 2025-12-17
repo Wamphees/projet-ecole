@@ -140,12 +140,27 @@ const DoctorAgenda = () => {
     setCurrentWeek(new Date());
   };
 
+  const normalizeDate = (dateStr: string) => {
+  const [day, month, year] = dateStr.split("/");
+  return `${year}-${month}-${day}`;
+};
+
+  // const getAppointmentForSlot = (day: Date, time: string) => {
+  //   const dayStr = day.toISOString().split("T")[0];
+  //   return appointments.find(
+  //     (apt) => apt.appointment_date === dayStr && apt.appointment_time === time
+  //   );
+  // };
+
   const getAppointmentForSlot = (day: Date, time: string) => {
-    const dayStr = day.toISOString().split("T")[0];
-    return appointments.find(
-      (apt) => apt.appointment_date === dayStr && apt.appointment_time === time
-    );
-  };
+  const dayStr = day.toISOString().split("T")[0];
+
+  return appointments.find(
+    (apt) =>
+      normalizeDate(apt.appointment_date) === dayStr &&
+      apt.appointment_time === time
+  );
+};
 
   const getStatusColor = (status: string) => {
     switch (status) {

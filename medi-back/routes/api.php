@@ -36,6 +36,8 @@ Route::middleware('auth:sanctum')->group(function () {
     // Récupérer tous les rendez-vous du patient connecté
     Route::get('/patients/appointments', [AppointmentController::class, 'getPatientAppointments']);
 
+    Route::put('/appointments/{id}/status', [AppointmentController::class, 'updateStatus']);
+
     // Annuler un rendez-vous
     Route::put('/appointments/{id}/cancel', [AppointmentController::class, 'cancel']);
 
@@ -43,10 +45,10 @@ Route::middleware('auth:sanctum')->group(function () {
      * Routes pour les MÉDECINS
      * Un médecin peut voir son planning (ses rendez-vous)
      */
+    Route::get('/doctors/appointments', [AppointmentController::class, 'getDoctorAppointments']);
 
     // Récupérer le planning du médecin connecté
     // Ex: /api/doctors/appointments?week=2025-01-13 (optionnel)
-    Route::get('/doctors/appointments', [AppointmentController::class, 'getDoctorAppointments']);
 });
 /**
  * ============================================

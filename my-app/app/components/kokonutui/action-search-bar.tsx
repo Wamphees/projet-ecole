@@ -107,7 +107,7 @@ const allActionsSample = [
     },
     {
         id: "5",
-        label: "Votre agenda",
+        label: "Contact",
         icon: <LayoutGrid className="h-4 w-4 text-blue-500" />,
         description: "quoi de prevu",
         short: "",

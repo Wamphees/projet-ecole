@@ -9,6 +9,7 @@ export default [
 //   route("patient/dashboard", "routes/patient/dashboard.tsx"),
   route("doctor/dashboard", "routes/doctor/dashboard.tsx"),
   route("attente", "routes/attente.tsx"),
+  route("contact", "routes/ContactPage.tsx"),
 
 //   route("admin/dashboard", "routes/admin/dashboard.tsx"),
 ] satisfies RouteConfig;

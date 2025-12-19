@@ -7,7 +7,7 @@ const doctors = [
     name: "Dr. Jean Kamga",
     specialty: "Cardiologue",
     hospital: "Hôpital Général de Douala",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1672655412906-8e10ba6ee373?q=80&w=786&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     message: "Votre santé cardiaque est ma priorité. Consultations et suivi personnalisé.",
     experience: "15 ans",
     city: "Douala"
@@ -17,7 +17,7 @@ const doctors = [
     name: "Dr. Marie Ndongo",
     specialty: "Pédiatre",
     hospital: "Hôpital Laquintinie",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face",
+    image: "https://plus.unsplash.com/premium_photo-1661690013376-9c1b73f0b16c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     message: "Spécialiste de la santé infantile. Je accompagne vos enfants vers une croissance saine.",
     experience: "12 ans",
     city: "Douala"
@@ -27,7 +27,7 @@ const doctors = [
     name: "Dr. Paul Biya'achou",
     specialty: "Chirurgien Orthopédiste",
     hospital: "CME Yaoundé",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=200&h=200&fit=crop&crop=face",
+    image: "https://plus.unsplash.com/premium_photo-1682130171029-49261a5ba80a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     message: "Expert en chirurgie osseuse et articulaire. Rétablissons votre mobilité ensemble.",
     experience: "20 ans",
     city: "Yaoundé"
@@ -37,170 +37,10 @@ const doctors = [
     name: "Dr. Amina Bello",
     specialty: "Gynécologue-Obstétricienne",
     hospital: "Clinique des Femmes",
-    image: "https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?w=200&h=200&fit=crop&crop=face",
+    image: "https://images.unsplash.com/photo-1678695972687-033fa0bdbac9?q=80&w=420&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     message: "Accompagnement complet de la femme à chaque étape de sa vie.",
     experience: "18 ans",
     city: "Garoua"
-  },
-  {
-    id: 5,
-    name: "Dr. Samuel Eto'o",
-    specialty: "Médecine du Sport",
-    hospital: "Centre Sport-Santé",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=200&h=200&fit=crop&crop=face",
-    message: "Optimisez vos performances sportives et prévenez les blessures.",
-    experience: "10 ans",
-    city: "Yaoundé"
-  },
-  {
-    id: 6,
-    name: "Dr. Chantal Mbarga",
-    specialty: "Dermatologue",
-    hospital: "Institut de Dermatologie",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face",
-    message: "Soins de la peau adaptés au climat camerounais. Solutions personnalisées.",
-    experience: "14 ans",
-    city: "Douala"
-  },
-  {
-    id: 7,
-    name: "Dr. Alain Sona",
-    specialty: "Ophtalmologue",
-    hospital: "Centre Vision Plus",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face",
-    message: "Préservez votre vue avec des consultations régulières et des soins adaptés.",
-    experience: "16 ans",
-    city: "Bafoussam"
-  },
-  {
-    id: 8,
-    name: "Dr. Fatou Ndiaye",
-    specialty: "Pédopsychiatre",
-    hospital: "Centre Médico-Psychologique",
-    image: "https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?w=200&h=200&fit=crop&crop=face",
-    message: "Santé mentale des jeunes : écoute, compréhension et accompagnement.",
-    experience: "11 ans",
-    city: "Yaoundé"
-  },
-  {
-    id: 9,
-    name: "Dr. Roger Milla",
-    specialty: "Gériatre",
-    hospital: "Centre Senior Santé",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=200&h=200&fit=crop&crop=face",
-    message: "Bien vieillir au Cameroun : suivi personnalisé pour nos aînés.",
-    experience: "22 ans",
-    city: "Yaoundé"
-  },
-  {
-    id: 10,
-    name: "Dr. Nathalie Kotto",
-    specialty: "Endocrinologue",
-    hospital: "Hôpital Central",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face",
-    message: "Spécialiste du diabète et des troubles hormonaux. Suivi sur mesure.",
-    experience: "13 ans",
-    city: "Douala"
-  },
-  {
-    id: 11,
-    name: "Dr. Patrice Ngan",
-    specialty: "Urologue",
-    hospital: "Clinique Urologique",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face",
-    message: "Prévention et traitement des troubles urinaires avec expertise.",
-    experience: "17 ans",
-    city: "Douala"
-  },
-  {
-    id: 12,
-    name: "Dr. Sylvie Ngo",
-    specialty: "Nutritionniste",
-    hospital: "Centre Nutrition Santé",
-    image: "https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?w=200&h=200&fit=crop&crop=face",
-    message: "Alimentation équilibrée adaptée à notre culture et produits locaux.",
-    experience: "9 ans",
-    city: "Yaoundé"
-  },
-  {
-    id: 13,
-    name: "Dr. Marc Owona",
-    specialty: "Pneumologue",
-    hospital: "Hôpital Pulmonaire",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=200&h=200&fit=crop&crop=face",
-    message: "Spécialiste des maladies respiratoires sous nos climats tropicaux.",
-    experience: "15 ans",
-    city: "Douala"
-  },
-  {
-    id: 14,
-    name: "Dr. Estelle Mballa",
-    specialty: "Dentiste",
-    hospital: "Cabinet Dental Smile",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face",
-    message: "Un sourire éclatant pour tous. Soins dentaires modernes et indolores.",
-    experience: "8 ans",
-    city: "Yaoundé"
-  },
-  {
-    id: 15,
-    name: "Dr. Christian Tumi",
-    specialty: "Neurologue",
-    hospital: "Institut Neurologique",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face",
-    message: "Expert en maladies neurologiques avec approche humaine et compréhensive.",
-    experience: "19 ans",
-    city: "Douala"
-  },
-  {
-    id: 16,
-    name: "Dr. Gisèle Nkodo",
-    specialty: "Médecin Généraliste",
-    hospital: "Centre Médical du Plateau",
-    image: "https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?w=200&h=200&fit=crop&crop=face",
-    message: "Médecine de famille : suivi global de toute la famille depuis 15 ans.",
-    experience: "15 ans",
-    city: "Yaoundé"
-  },
-  {
-    id: 17,
-    name: "Dr. Armand Foe",
-    specialty: "Chirurgien Viscéral",
-    hospital: "Centre Chirurgical Moderne",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=200&h=200&fit=crop&crop=face",
-    message: "Chirurgie digestive de pointe avec des techniques mini-invasives.",
-    experience: "21 ans",
-    city: "Douala"
-  },
-  {
-    id: 18,
-    name: "Dr. Brigitte Ngo",
-    specialty: "Oncologue",
-    hospital: "Centre d'Oncologie",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face",
-    message: "Lutte contre le cancer avec compassion et traitements innovants.",
-    experience: "16 ans",
-    city: "Yaoundé"
-  },
-  {
-    id: 19,
-    name: "Dr. Eric Djemba",
-    specialty: "Radiologue",
-    hospital: "Centre d'Imagerie Médicale",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face",
-    message: "Diagnostic précis grâce aux technologies d'imagerie les plus récentes.",
-    experience: "12 ans",
-    city: "Douala"
-  },
-  {
-    id: 20,
-    name: "Dr. Laura Mbappe",
-    specialty: "Médecine Esthétique",
-    hospital: "Institut de Beauté Médicale",
-    image: "https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?w=200&h=200&fit=crop&crop=face",
-    message: "Esthétique médicale sûre pour révéler votre beauté naturelle.",
-    experience: "7 ans",
-    city: "Douala"
   }
 ];
 

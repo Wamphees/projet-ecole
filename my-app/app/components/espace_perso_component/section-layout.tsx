@@ -6,8 +6,15 @@ import {
 } from "../ui/tabs";
 import { Notif } from "./notification-section";
 import HistoryCard from "./history-section";
+import { DocumentUpload } from "../documents/DocumentUpload";
+import auth from "~/lib/auth";
+import { useAuth } from "../../contexts/AuthContext";
+
 
 export default function Tab() {
+    const { isAuthenticated, user, role, logout } = useAuth();
+  
+  
   return (
     <Tabs className="items-center w-full" defaultValue="tab-1">
       <TabsList className="h-auto w-full flex justify-start rounded-none border-b bg-transparent p-0">
@@ -21,13 +28,13 @@ export default function Tab() {
           className="relative rounded-none py-2 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary"
           value="tab-2"
         >
-          Historiques
+          Documents
         </TabsTrigger>
         <TabsTrigger
           className="relative rounded-none py-2 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary"
           value="tab-3"
         >
-          Documents
+          Historiques
         </TabsTrigger>
         <TabsTrigger
           className="relative rounded-none py-2 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary"
@@ -41,13 +48,21 @@ export default function Tab() {
           <Notif />
       </TabsContent>
       <TabsContent value="tab-2" className="w-full">
-        <h1 className="text-xl font-bold mb-4 mt-3">Historique</h1>
-          <HistoryCard />
+        <h1 className="text-xl font-bold mb-4 mt-3">Televersez vos documents</h1>
+        {isAuthenticated ? (
+              <>
+                          <DocumentUpload patientId={user?.id} />
+
+              </>
+            ) : (
+              <>
+                <p>indisponible</p>
+              </>
+            )}
       </TabsContent>
-      <TabsContent value="tab-3">
-        <p className="p-4 text-center text-muted-foreground text-xs">
-          Documents
-        </p>
+      <TabsContent value="tab-3" className="w-full">
+        <h1 className="text-xl font-bold mb-4 mt-3">Televersez vos documents</h1>
+          <HistoryCard />
       </TabsContent>
       <TabsContent value="tab-4" className="w-full">
         <p className="p-4 text-center text-muted-foreground text-xs">

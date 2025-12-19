@@ -158,7 +158,7 @@ export function ItemForm({ doctorId }: ItemFormProps) {
                   <FieldContent>
                     <FieldTitle>Consultation générale</FieldTitle>
                     <FieldDescription>
-                      Run GPU workloads on a K8s configured cluster.
+                      Évaluation médicale complète pour diagnostic et suivi du patient
                     </FieldDescription>
                   </FieldContent>
                   <RadioGroupItem value="Consultation générale" id="a" />
@@ -169,7 +169,7 @@ export function ItemForm({ doctorId }: ItemFormProps) {
                   <FieldContent>
                     <FieldTitle>Téléconsultation</FieldTitle>
                     <FieldDescription>
-                      Access a VM configured cluster to run GPU workloads.
+                      Consultation à distance via vidéo.
                     </FieldDescription>
                   </FieldContent>
                   <RadioGroupItem value="Téléconsultation" id="vm2" />
@@ -180,7 +180,7 @@ export function ItemForm({ doctorId }: ItemFormProps) {
                   <FieldContent>
                     <FieldTitle>Consultation d'urgence</FieldTitle>
                     <FieldDescription>
-                      Access a VM configured cluster to run GPU workloads.
+                      Consultation d'urgence pour les cas critiques.
                     </FieldDescription>
                   </FieldContent>
                   <RadioGroupItem value="Consultation d'urgence" id="vm4" />
@@ -191,7 +191,7 @@ export function ItemForm({ doctorId }: ItemFormProps) {
                   <FieldContent>
                     <FieldTitle>Bilan de santé</FieldTitle>
                     <FieldDescription>
-                      Access a VM configured cluster to run GPU workloads.
+                      Bilan de santé complet pour évaluation médicale.
                     </FieldDescription>
                   </FieldContent>
                   <RadioGroupItem value="Bilan de santé" id="vm5" />

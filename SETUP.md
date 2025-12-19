@@ -1,33 +1,4 @@
-# 🏥 MedisMat - Guide de Configuration
-
-## 📋 Structure du projet
-
-```
-my-app/ (Frontend React)
-  └── app/
-      ├── routes/
-      │   ├── home.tsx (accueil)
-      │   ├── login.tsx
-      │   ├── register.tsx
-      │   ├── patient/
-      │   ├── doctor/
-      │   └── admin/
-      ├── components/
-      │   ├── navbar.tsx
-      │   └── ProtectedRoute.tsx
-      ├── contexts/
-      │   └── AuthContext.tsx
-      └── lib/
-          └── auth.ts (service d'API)
-
-medismat-backend/ (Backend Laravel)
-  └── app/
-      ├── Http/
-      │   └── Controllers/
-      │       └── AuthController.php
-      └── Models/
-          └── User.php
-```
+# 🏥 MedisMart - Guide de Configuration
 
 ## 🚀 Démarrage
 
@@ -35,7 +6,7 @@ medismat-backend/ (Backend Laravel)
 
 1. **Installer les dépendances**
 ```bash
-cd medismat-backend
+cd medismart-back
 composer install
 ```
 
@@ -47,7 +18,7 @@ php artisan key:generate
 
 3. **Configurer la base de données** dans `.env`
 ```
-DB_DATABASE=medismat
+DB_DATABASE=medismart_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -90,7 +61,7 @@ L'app sera disponible à `http://localhost:5173`
 6. ProtectedRoute vérifie le rôle et affiche la page ou redirige
 ```
 
-## 📚 API Endpoints (Laravel)
+## 📚 exemple API Endpoints (Laravel)
 
 | Méthode | Route | Description |
 |---------|-------|-------------|
@@ -133,15 +104,5 @@ curl -X POST http://localhost:8000/api/auth/register \
 ## 🛡️ Sécurité
 
 - Les tokens sont stockés en localStorage
-- CORS est configuré pour `localhost:5173` et `localhost:3000`
 - Les routes protégées vérifient le rôle avant d'afficher le contenu
 - Les mots de passe sont hashés avec bcrypt en backend
-
-## 📝 Prochaines étapes
-
-- [ ] Créer des pages détaillées (patients, rendez-vous, etc.)
-- [ ] Connecter les formulaires à l'API
-- [ ] Ajouter la validation côté serveur
-- [ ] Implémenter la pagination
-- [ ] Ajouter les notifications
-- [ ] Créer une base de données complète
